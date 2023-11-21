@@ -5,16 +5,20 @@ import CustomerModel from "./customer.model";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
   async create(entity: Customer): Promise<void> {
-    await CustomerModel.create({
-      id: entity.id,
-      name: entity.name,
-      street: entity.Address.street,
-      number: entity.Address.number,
-      zipcode: entity.Address.zip,
-      city: entity.Address.city,
-      active: entity.isActive(),
-      rewardPoints: entity.rewardPoints,
-    });
+    try {
+      await CustomerModel.create({
+        id: entity.id,
+        name: entity.name,
+        street: entity.Address.street,
+        number: entity.Address.number,
+        zipcode: entity.Address.zip,
+        city: entity.Address.city,
+        active: entity.isActive(),
+        rewardPoints: entity.rewardPoints,
+      });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async update(entity: Customer): Promise<void> {
