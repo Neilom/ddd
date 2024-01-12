@@ -13,12 +13,12 @@ export default class ProductUpdateUseCase {
 
   async execute(input: InputUpdateProductDto): Promise<OutputUpdateProductDto> {
     await this.productRepository.update({
-      id: input.id,
+      id: input._id,
       name: input.name,
       price: input.price,
     });
     return {
-      id: input.id,
+      _id: input._id,
       name: input.name,
       price: input.price,
     };

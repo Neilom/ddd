@@ -4,7 +4,7 @@ import ProductUpdateUseCase from "./update.product.usecase";
 const product = ProductFactory.create("a", "Product 1", 10);
 
 const input = {
-  id: product.id,
+  _id: product.id,
   name: product.name,
   price: product.price,
 };

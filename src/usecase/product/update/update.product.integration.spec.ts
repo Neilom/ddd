@@ -31,13 +31,13 @@ describe("Find product integration test", () => {
     await productRepository.create(product);
 
     const input = {
-      id: "1",
+      _id: "1",
       name: "Product 200",
       price: 200,
     };
 
     const output = {
-      id: "1",
+      _id: "1",
       name: "Product 200",
       price: 200,
     };
